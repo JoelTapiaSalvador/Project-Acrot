@@ -11,4 +11,4 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-To report a vulnerability goes to Issues in this repository and use the template for security vulnerabilities.
+To report a vulnerability go to "Issues" in this repository and use the template for security vulnerabilities or click [here](https://github.com/JoelTapiaSalvador/Project-Acrot/issues/new?assignees=JoelTapiaSalvador&labels=Vulnerability&projects=&template=security-vulnerability.md&title=%5BVUL%5D).
