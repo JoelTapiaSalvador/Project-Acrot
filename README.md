@@ -1,2 +1,2 @@
-# Project-Acrot
+# Project Acrot
 Secret project with codename "Acrot".
