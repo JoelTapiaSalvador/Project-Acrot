@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7se6j2dagx08"]
+
+[ext_resource type="Script" path="res://title_screen.gd" id="1_6sr1k"]
+[ext_resource type="FontFile" uid="uid://cyg5wqqtibr18" path="res://fonts/public-pixel-font/PublicPixel-E447g.ttf" id="1_8htjf"]
+[ext_resource type="FontFile" uid="uid://dtj6f057qqka7" path="res://fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="2_mjc38"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n2eww"]
+
+[node name="TitleScreen" type="Node"]
+script = ExtResource("1_6sr1k")
+
+[node name="TitleScreenBackground" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_n2eww")
+
+[node name="Ttile" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -650.0
+offset_top = 300.0
+offset_right = 650.0
+offset_bottom = 400.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_8htjf")
+theme_override_font_sizes/font_size = 100
+text = "Project Acrot"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.5
+offset_top = -580.0
+offset_right = 179.5
+offset_bottom = -460.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_mjc38")
+theme_override_font_sizes/font_size = 70
+text = "Start"
+
+[node name="ExitButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.5
+offset_top = -380.0
+offset_right = 179.5
+offset_bottom = -260.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_mjc38")
+theme_override_font_sizes/font_size = 70
+text = "Exit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
