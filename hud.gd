@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var pause_button = $PauseButton
+@onready var pause_menu = $PauseMenu
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,8 +16,8 @@ func _process(_delta):
 
 func _on_pause_button_pressed():
 	get_tree().paused = true
-	$PauseMenu.visible = true
-	$PauseButton.visible = false
+	pause_menu.visible = true
+	pause_button.visible = false
 
 
 func _on_exit_button_pressed():
@@ -22,6 +25,6 @@ func _on_exit_button_pressed():
 
 
 func _on_continue_button_pressed():
-	$PauseButton.visible = true
-	$PauseMenu.visible = false
+	pause_button.visible = true
+	pause_menu.visible = false
 	get_tree().paused = false
