@@ -1,4 +1,4 @@
-extends Node
+extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +11,17 @@ func _process(_delta):
 	pass
 
 
-func _on_start_button_pressed():
-	Main.goto_scene("res://first_scence.tscn")
+func _on_pause_button_pressed():
+	get_tree().paused = true
+	$PauseMenu.visible = true
+	$PauseButton.visible = false
 
 
 func _on_exit_button_pressed():
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
+
+
+func _on_continue_button_pressed():
+	$PauseButton.visible = true
+	$PauseMenu.visible = false
+	get_tree().paused = false

@@ -9,3 +9,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_g3t5k")
+metadata/_edit_group_ = true
