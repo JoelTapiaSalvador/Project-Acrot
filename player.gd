@@ -10,6 +10,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	# Add the gravity.
+	var collision = move_and_collide(velocity * delta)
+	
+	if collision:
+		velocity = velocity.slide(collision.get_normal())
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
