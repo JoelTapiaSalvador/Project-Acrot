@@ -9,6 +9,7 @@ size = Vector2(100, 200)
 size = Vector2(100, 200)
 
 [node name="Player" type="CharacterBody2D"]
+platform_wall_layers = 1
 script = ExtResource("1_fi4qo")
 metadata/_edit_group_ = true
 

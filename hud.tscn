@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2c84gy1cigyg"]
+[gd_scene load_steps=7 format=3 uid="uid://f34up5qlqty7"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_mavfs"]
 [ext_resource type="FontFile" uid="uid://dtj6f057qqka7" path="res://fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="2_16b83"]

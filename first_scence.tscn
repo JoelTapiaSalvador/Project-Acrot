@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8l1fo3ahytvo"]
+[gd_scene load_steps=7 format=3 uid="uid://c3ttbu6gcqmkh"]
 
-[ext_resource type="PackedScene" uid="uid://b01ayjnitm32o" path="res://home_background.tscn" id="1_b728d"]
+[ext_resource type="PackedScene" uid="uid://bnmtlopdtvhbq" path="res://home_background.tscn" id="1_b728d"]
 [ext_resource type="PackedScene" uid="uid://b0m7q0dmw12ux" path="res://player.tscn" id="2_633s2"]
 [ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="3_opjwc"]
 
@@ -8,7 +8,7 @@
 blend_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f63vt"]
-size = Vector2(1920, 60)
+size = Vector2(400, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r3k11"]
 animations = [{
@@ -27,8 +27,7 @@ animations = [{
 material = SubResource("CanvasItemMaterial_qq7xn")
 
 [node name="Player" parent="." instance=ExtResource("2_633s2")]
-position = Vector2(425, 889)
-platform_wall_layers = 1
+position = Vector2(201, 553)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(960, 1050)
@@ -38,5 +37,18 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_f63vt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Floor"]
+visible = false
 scale = Vector2(1920, 60)
+sprite_frames = SubResource("SpriteFrames_r3k11")
+
+[node name="Bed" type="StaticBody2D" parent="."]
+position = Vector2(200, 870)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
+shape = SubResource("RectangleShape2D_f63vt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bed"]
+visible = false
+scale = Vector2(400, 30)
 sprite_frames = SubResource("SpriteFrames_r3k11")
