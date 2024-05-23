@@ -8,7 +8,7 @@ var t = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("ladders")
-	call_deferred("set_up")	
+	call_deferred("set_up")
 
 func set_up():
 	player = get_tree().get_current_scene().get_node("Player")

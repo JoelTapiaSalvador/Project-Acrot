@@ -74,14 +74,14 @@ shape = SubResource("RectangleShape2D_6lqbm")
 scale = Vector2(1920, 40)
 sprite_frames = SubResource("SpriteFrames_r3k11")
 
-[node name="LeftWall2" type="StaticBody2D" parent="."]
+[node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2(5, 530)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 shape = SubResource("RectangleShape2D_gt3w5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LeftWall2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LeftWall"]
 scale = Vector2(10, 980)
 sprite_frames = SubResource("SpriteFrames_r3k11")
 
