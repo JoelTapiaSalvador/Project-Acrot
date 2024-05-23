@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://brum5xjtvv41b"]
+[gd_scene load_steps=6 format=3 uid="uid://ii2l70mk1ppr"]
 
-[ext_resource type="Script" path="res://ladder.gd" id="1_5wlrq"]
-[ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="1_38s1y"]
+[ext_resource type="Script" path="res://objects/ladder.gd" id="1_xwlld"]
+[ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="2_5oil6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yc2b"]
 size = Vector2(80, 166)
@@ -13,7 +13,7 @@ blend_mode = 1
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_38s1y")
+"texture": ExtResource("2_5oil6")
 }],
 "loop": true,
 "name": &"default",
@@ -24,7 +24,7 @@ animations = [{
 position = Vector2(370, 937.5)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_5wlrq")
+script = ExtResource("1_xwlld")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4yc2b")

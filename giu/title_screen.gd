@@ -12,7 +12,7 @@ func _process(_delta):
 
 
 func _on_start_button_pressed():
-	Main.goto_scene("res://first_scence.tscn")
+	Main.goto_scene("res://levels/room.tscn")
 
 
 func _on_exit_button_pressed():

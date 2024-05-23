@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dicbg12xic24c"]
+[gd_scene load_steps=7 format=3 uid="uid://cxo7y2owufhau"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_lvlw0"]
-[ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="2_ke8fj"]
-[ext_resource type="FontFile" uid="uid://n8r33jk2bji0" path="res://fonts/pixeloid-font/PixeloidSans-mLxMm.ttf" id="3_ymj6l"]
+[ext_resource type="Script" path="res://objects/door.gd" id="1_wnx6c"]
+[ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="2_gh0ue"]
+[ext_resource type="FontFile" uid="uid://n8r33jk2bji0" path="res://fonts/pixeloid-font/PixeloidSans-mLxMm.ttf" id="3_sqgob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udyuk"]
 size = Vector2(112.5, 250)
@@ -14,7 +14,7 @@ blend_mode = 1
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ke8fj")
+"texture": ExtResource("2_gh0ue")
 }],
 "loop": true,
 "name": &"default",
@@ -22,7 +22,7 @@ animations = [{
 }]
 
 [node name="Door" type="Area2D"]
-script = ExtResource("1_lvlw0")
+script = ExtResource("1_wnx6c")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -47,7 +47,7 @@ grow_horizontal = 2
 [node name="ExitSign" type="Label" parent="DoorContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_ymj6l")
+theme_override_fonts/font = ExtResource("3_sqgob")
 theme_override_font_sizes/font_size = 36
 text = "Leave"
 horizontal_alignment = 2

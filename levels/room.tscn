@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8l1fo3ahytvo"]
+[gd_scene load_steps=13 format=3 uid="uid://ds43ksq7wdwwy"]
 
-[ext_resource type="PackedScene" uid="uid://bnmtlopdtvhbq" path="res://home_background.tscn" id="1_b728d"]
-[ext_resource type="PackedScene" uid="uid://b0m7q0dmw12ux" path="res://player.tscn" id="2_633s2"]
-[ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="3_opjwc"]
-[ext_resource type="PackedScene" uid="uid://dicbg12xic24c" path="res://door.tscn" id="3_x5dwb"]
-[ext_resource type="PackedScene" uid="uid://brum5xjtvv41b" path="res://ladder.tscn" id="4_lr6f8"]
+[ext_resource type="Script" path="res://levels/room.gd" id="1_37wy6"]
+[ext_resource type="PackedScene" uid="uid://de0y5qpf8s6fm" path="res://levels/room_background.tscn" id="2_dtlwt"]
+[ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="3_pubk8"]
+[ext_resource type="PackedScene" uid="uid://ii2l70mk1ppr" path="res://objects/ladder.tscn" id="5_jrlw2"]
+[ext_resource type="PackedScene" uid="uid://bjebmoew573cq" path="res://characters/player.tscn" id="6_45g55"]
+[ext_resource type="PackedScene" uid="uid://cxo7y2owufhau" path="res://objects/door.tscn" id="6_e47gv"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qq7xn"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f4s1a"]
 blend_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4fbq"]
@@ -16,7 +17,7 @@ size = Vector2(400, 30)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_opjwc")
+"texture": ExtResource("3_pubk8")
 }],
 "loop": true,
 "name": &"default",
@@ -32,10 +33,11 @@ size = Vector2(1920, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3w5"]
 size = Vector2(10, 980)
 
-[node name="FirstScence" type="Node"]
+[node name="Room" type="Node"]
+script = ExtResource("1_37wy6")
 
-[node name="HomeBackground" parent="." instance=ExtResource("1_b728d")]
-material = SubResource("CanvasItemMaterial_qq7xn")
+[node name="RoomBackground" parent="." instance=ExtResource("2_dtlwt")]
+material = SubResource("CanvasItemMaterial_f4s1a")
 
 [node name="Bed" type="StaticBody2D" parent="."]
 position = Vector2(210, 870)
@@ -48,12 +50,12 @@ one_way_collision = true
 scale = Vector2(400, 30)
 sprite_frames = SubResource("SpriteFrames_r3k11")
 
-[node name="Door" parent="." instance=ExtResource("3_x5dwb")]
+[node name="HallwayDoor" parent="." instance=ExtResource("6_e47gv")]
 position = Vector2(1800, 895)
 
-[node name="Ladder" parent="." instance=ExtResource("4_lr6f8")]
+[node name="Ladder" parent="." instance=ExtResource("5_jrlw2")]
 
-[node name="Player" parent="." instance=ExtResource("2_633s2")]
+[node name="Player" parent="." instance=ExtResource("6_45g55")]
 position = Vector2(201, 553)
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -100,4 +102,4 @@ shape = SubResource("RectangleShape2D_gt3w5")
 scale = Vector2(10, 980)
 sprite_frames = SubResource("SpriteFrames_r3k11")
 
-[connection signal="body_entered" from="Ladder" to="Player" method="_on_ladder_body_entered"]
+[connection signal="used" from="HallwayDoor" to="." method="_on_hallway_door_used"]

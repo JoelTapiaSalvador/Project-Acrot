@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://f34up5qlqty7"]
+[gd_scene load_steps=7 format=3 uid="uid://cxvt8digdpsw3"]
 
-[ext_resource type="Script" path="res://hud.gd" id="1_mavfs"]
-[ext_resource type="FontFile" uid="uid://dtj6f057qqka7" path="res://fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="2_16b83"]
+[ext_resource type="Script" path="res://giu/hud.gd" id="1_qvloi"]
+[ext_resource type="FontFile" uid="uid://dtj6f057qqka7" path="res://fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="2_8wbsf"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_xtgu5"]
 action = &"pause"
@@ -15,7 +15,7 @@ events = [SubResource("InputEventAction_xtgu5")]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_mavfs")
+script = ExtResource("1_qvloi")
 
 [node name="PauseButton" type="Button" parent="."]
 process_mode = 3
@@ -62,7 +62,7 @@ offset_right = 225.0
 offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_16b83")
+theme_override_fonts/font = ExtResource("2_8wbsf")
 theme_override_font_sizes/font_size = 70
 text = "Continue
 "
@@ -81,7 +81,7 @@ offset_right = 225.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_16b83")
+theme_override_fonts/font = ExtResource("2_8wbsf")
 theme_override_font_sizes/font_size = 70
 text = "Exit"
 

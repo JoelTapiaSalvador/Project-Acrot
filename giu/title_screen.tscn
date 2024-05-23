@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7se6j2dagx08"]
+[gd_scene load_steps=5 format=3 uid="uid://djylygu8o4kc0"]
 
-[ext_resource type="Script" path="res://title_screen.gd" id="1_6sr1k"]
-[ext_resource type="FontFile" uid="uid://cyg5wqqtibr18" path="res://fonts/public-pixel-font/PublicPixel-E447g.ttf" id="1_8htjf"]
-[ext_resource type="FontFile" uid="uid://dtj6f057qqka7" path="res://fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="2_mjc38"]
+[ext_resource type="Script" path="res://giu/title_screen.gd" id="1_lp70t"]
+[ext_resource type="FontFile" uid="uid://cyg5wqqtibr18" path="res://fonts/public-pixel-font/PublicPixel-E447g.ttf" id="2_g7lro"]
+[ext_resource type="FontFile" uid="uid://dtj6f057qqka7" path="res://fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="3_x044t"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n2eww"]
 
 [node name="TitleScreen" type="Node"]
-script = ExtResource("1_6sr1k")
+script = ExtResource("1_lp70t")
 
 [node name="TitleScreenBackground" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -26,7 +26,7 @@ offset_top = 300.0
 offset_right = 650.0
 offset_bottom = 400.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_8htjf")
+theme_override_fonts/font = ExtResource("2_g7lro")
 theme_override_font_sizes/font_size = 100
 text = "Project Acrot"
 
@@ -42,7 +42,7 @@ offset_right = 150.0
 offset_bottom = -460.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_mjc38")
+theme_override_fonts/font = ExtResource("3_x044t")
 theme_override_font_sizes/font_size = 70
 text = "Start"
 
@@ -58,7 +58,7 @@ offset_right = 150.0
 offset_bottom = -260.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_mjc38")
+theme_override_fonts/font = ExtResource("3_x044t")
 theme_override_font_sizes/font_size = 70
 text = "Exit"
 

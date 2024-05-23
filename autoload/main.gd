@@ -1,6 +1,6 @@
 extends Node
 
-@onready var hud = preload("res://hud.tscn").instantiate()
+@onready var hud = preload("res://giu/hud.tscn").instantiate()
 
 
 # Called when the node enters the scene tree for the first time.
