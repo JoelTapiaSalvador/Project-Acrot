@@ -11,7 +11,6 @@ func _process(_delta):
 	pass
 
 
-func _on_hallway_door_used(body):
-	if body is Player:
-		Main.goto_scene("res://levels/halway.tscn")
+func _on_hallway_door_used():
+	Main.goto_scene("res://levels/halway.tscn")
 	
