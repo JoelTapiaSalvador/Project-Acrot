@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8l1fo3ahytvo"]
+[gd_scene load_steps=11 format=3 uid="uid://c8l1fo3ahytvo"]
 
 [ext_resource type="PackedScene" uid="uid://bnmtlopdtvhbq" path="res://home_background.tscn" id="1_b728d"]
 [ext_resource type="PackedScene" uid="uid://b0m7q0dmw12ux" path="res://player.tscn" id="2_633s2"]
 [ext_resource type="Texture2D" uid="uid://bes4uc41i7qni" path="res://assets/place_holder1.png" id="3_opjwc"]
+[ext_resource type="PackedScene" uid="uid://brum5xjtvv41b" path="res://ladder.tscn" id="4_lr6f8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qq7xn"]
 blend_mode = 2
@@ -11,23 +12,6 @@ blend_mode = 2
 size = Vector2(400, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r3k11"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_opjwc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yc2b"]
-size = Vector2(80, 166)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dts1e"]
-blend_mode = 1
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jqwis"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -66,16 +50,7 @@ sprite_frames = SubResource("SpriteFrames_r3k11")
 [node name="Player" parent="." instance=ExtResource("2_633s2")]
 position = Vector2(201, 553)
 
-[node name="Ladder" type="Area2D" parent="."]
-position = Vector2(370, 937.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-shape = SubResource("RectangleShape2D_4yc2b")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ladder"]
-material = SubResource("CanvasItemMaterial_dts1e")
-scale = Vector2(80, 165)
-sprite_frames = SubResource("SpriteFrames_jqwis")
+[node name="Ladder" parent="." instance=ExtResource("4_lr6f8")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(960, 1050)
@@ -122,4 +97,3 @@ scale = Vector2(10, 980)
 sprite_frames = SubResource("SpriteFrames_r3k11")
 
 [connection signal="body_entered" from="Ladder" to="Player" method="_on_ladder_body_entered"]
-[connection signal="body_exited" from="Ladder" to="Player" method="_on_ladder_body_exited"]

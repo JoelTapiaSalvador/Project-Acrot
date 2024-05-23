@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _process(_delta):
-	print(on_ladder)
+	pass
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
@@ -46,13 +46,3 @@ func _physics_process(delta):
 	
 
 
-func _on_ladder_body_entered(_body): # Modify this funtion if ever in  scene there is more than one PhysicsBody2D
-	print("entered ladder")
-	on_ladder = true 
-	
-
-
-func _on_ladder_body_exited(_body): # Modify this funtion if ever in  scene there is more than one PhysicsBody2D
-	print("left laddder")
-	on_ladder = false
-	velocity.y = 0

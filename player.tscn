@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0m7q0dmw12ux"]
+[gd_scene load_steps=5 format=3 uid="uid://b0m7q0dmw12ux"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fi4qo"]
 
@@ -6,6 +6,9 @@
 size = Vector2(100, 200)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t2rlk"]
+size = Vector2(100, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugk1a"]
 size = Vector2(100, 200)
 
 [node name="Player" type="CharacterBody2D"]
@@ -18,3 +21,10 @@ shape = SubResource("RectangleShape2D_wn5s6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_t2rlk")
+
+[node name="LadderDetector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderDetector"]
+shape = SubResource("RectangleShape2D_ugk1a")
