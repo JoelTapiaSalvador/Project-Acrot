@@ -19,7 +19,7 @@ func _notification(notification_content):
 		get_tree().quit()
 
 
-func goto_scene(path):
+func goto_scene(path, with_hud:=true):
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.
 	# Deleting the current scene at this point is
@@ -31,10 +31,10 @@ func goto_scene(path):
 	
 	var scene = load(path).instantiate()
 
-	call_deferred("_deferred_goto_scene", scene)
+	call_deferred("_deferred_goto_scene", scene, with_hud)
 	
 	
-func _deferred_goto_scene(scene):
+func _deferred_goto_scene(scene, with_hud):
 	# It is now safe to remove the current scene.
 	get_tree().current_scene.free()
 
@@ -44,5 +44,6 @@ func _deferred_goto_scene(scene):
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = scene
 	
-	get_tree().current_scene.add_child(hud)
+	if with_hud:
+		get_tree().current_scene.add_child(hud)
 
