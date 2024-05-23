@@ -2,6 +2,7 @@ extends Area2D
 class_name Interactable
 
 @onready var manager = $"/root/InteractionManager"
+@onready var door_container = self.get_node("DoorContainer")
 
 signal activated
 signal deactivated
@@ -20,10 +21,10 @@ func _exited(body):
 		manager.unregister(self)
 	
 func activate():
-	activated.emit()
-	
+	door_container.visible = true
+
 func deactivate():
-	deactivated.emit()
+	door_container.visible = false
 
 func use():
 	used.emit()
