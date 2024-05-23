@@ -1,16 +1,7 @@
 extends Node
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-
+# When the hallways door emits signal of being used by player, change scene to hallway.
 func _on_hallway_door_used():
 	Main.goto_scene("res://levels/halway.tscn")
 	

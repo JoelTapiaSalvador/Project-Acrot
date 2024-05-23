@@ -12,19 +12,24 @@ func _ready():
 	body_entered.connect(_entered)
 	body_exited.connect(_exited)
 
+
 func _entered(body):
 	if body is Player:
 		manager.register(self)
 
+
 func _exited(body):
 	if body is Player:
 		manager.unregister(self)
-	
+
+
 func activate():
 	door_container.visible = true
 
+
 func deactivate():
 	door_container.visible = false
+
 
 func use():
 	used.emit()

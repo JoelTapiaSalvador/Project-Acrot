@@ -1,20 +1,16 @@
 extends Node
 
+# Preload HUD
 @onready var hud = preload("res://giu/hud.tscn").instantiate()
 
 
 # Called when the node enters the scene tree for the first time.
-
-
 func _ready():
 	get_tree().auto_accept_quit = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
 
 func _notification(notification_content):
+	# If it recives the close request, quits all the tree.
 	if notification_content == NOTIFICATION_WM_CLOSE_REQUEST:
 		get_tree().quit()
 
@@ -44,6 +40,7 @@ func _deferred_goto_scene(scene, with_hud):
 	# Optionally, to make it compatible with the SceneTree.change_scene_to_file() API.
 	get_tree().current_scene = scene
 	
+	#Optionally add HUD on top of the scene.
 	if with_hud:
 		get_tree().current_scene.add_child(hud)
 
