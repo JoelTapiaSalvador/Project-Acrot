@@ -2,7 +2,7 @@ extends Area2D
 class_name Interactable
 
 @onready var manager = $"/root/InteractionManager"
-@onready var door_container = self.get_node("DoorContainer")
+@onready var door_container = $DoorContainer
 
 signal activated
 signal deactivated

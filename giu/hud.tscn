@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxvt8digdpsw3"]
+[gd_scene load_steps=9 format=3 uid="uid://cxvt8digdpsw3"]
 
 [ext_resource type="Script" path="res://giu/hud.gd" id="1_qvloi"]
 [ext_resource type="FontFile" uid="uid://dtj6f057qqka7" path="res://fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf" id="2_8wbsf"]
@@ -12,6 +12,12 @@ events = [SubResource("InputEventAction_xtgu5")]
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tr5ox"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_naf4r"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_54nsj"]
+action = &"pause"
+
+[sub_resource type="Shortcut" id="Shortcut_pjfqe"]
+events = [SubResource("InputEventAction_54nsj")]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
@@ -48,43 +54,59 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_naf4r")
 
-[node name="ContinueButton" type="Button" parent="PauseMenu"]
-process_mode = 3
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu" node_paths=PackedStringArray("shortcut_context")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -200.0
-offset_right = 225.0
-offset_bottom = -80.0
+offset_left = -197.0
+offset_top = -169.0
+offset_right = 197.0
+offset_bottom = 169.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("ContinueButton")
+focus_neighbor_top = NodePath("ContinueButton")
+focus_neighbor_right = NodePath("ExitButton")
+focus_neighbor_bottom = NodePath("ExitButton")
+focus_next = NodePath("ExitButton")
+focus_previous = NodePath("ContinueButton")
+focus_mode = 2
+shortcut_context = NodePath("ContinueButton")
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="PauseMenu/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../ExitButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath(".")
 theme_override_fonts/font = ExtResource("2_8wbsf")
 theme_override_font_sizes/font_size = 70
+shortcut = SubResource("Shortcut_pjfqe")
 text = "Continue
 "
 
-[node name="ExitButton" type="Button" parent="PauseMenu"]
+[node name="ExitButton" type="Button" parent="PauseMenu/VBoxContainer"]
 process_mode = 3
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = 80.0
-offset_right = 225.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+focus_neighbor_left = NodePath("../ContinueButton")
+focus_neighbor_top = NodePath("../ContinueButton")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../ContinueButton")
 theme_override_fonts/font = ExtResource("2_8wbsf")
 theme_override_font_sizes/font_size = 70
 text = "Exit"
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="PauseMenu/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="PauseMenu/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

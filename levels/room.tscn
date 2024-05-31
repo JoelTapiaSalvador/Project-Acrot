@@ -41,6 +41,7 @@ material = SubResource("CanvasItemMaterial_f4s1a")
 
 [node name="Bed" type="StaticBody2D" parent="."]
 position = Vector2(210, 870)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
 shape = SubResource("RectangleShape2D_w4fbq")
